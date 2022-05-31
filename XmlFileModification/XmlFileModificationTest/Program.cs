@@ -1,14 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System.Security.Cryptography;
+
+using System.Security.Cryptography.X509Certificates;
 using XmlFileModificationTest;
 
-Console.WriteLine("Hello, World!");
+var replaceFieldXml = new ReplaceFieldsXml();
 
+//Get test certificate
+var cert = new X509Certificate2("C:\\app\\cert\\domain.pfx", "123456789");
 
-var pathFile = "C:\\app\\XmlFileReadWrite\\XmlFileModification\\XmlFileModificationTest\\XmlFile\\file.xml";
-var signedFathFile = "C:\\app\\XmlFileReadWrite\\XmlFileModification\\XmlFileModificationTest\\XmlFile\\file1.xml";
-
-var xmlFileTest = new XmlFileMod();
-RSA Key = RSA.Create();
-string Certificate = "microsoft.cer";
-xmlFileTest.SignXmlFile(pathFile, signedFathFile, Key, Certificate);
+replaceFieldXml.ModifyXmlFile("C:\\app\\XmlFileReadWrite\\XmlFileModification\\XmlFileModificationTest\\XmlFile\\test.xml", cert);

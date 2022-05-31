@@ -8,31 +8,6 @@ namespace XmlFileModificationTest
 {
     public class XmlFileMod
     {
-        //public void ReadDataXmlFile(string pathToFile)
-        //{
-
-        //    XmlTextReader textReader = new XmlTextReader("C:\\app\\XmlFileReadWrite\\XmlFileModification\\XmlFileModificationTest\\XmlFile\\file.xml");
-
-        //    XmlDocument xmlDocument = new XmlDocument();
-        //    xmlDocument.Load("C:\\app\\XmlFileReadWrite\\XmlFileModification\\XmlFileModificationTest\\XmlFile\\file.xml");
-
-        //    //XmlNode xmlNode = xmlDocument.DocumentElement.GetElementsByTagName("Challenge").Item(0);
-
-        //    //Console.WriteLine(xmlNode.FirstChild.Value);
-
-        //    var a = xmlDocument.GetElementsByTagName("Challenge").Item(0);
-        //    //if(a?.FirstChild != null)
-        //        Console.WriteLine(a?.FirstChild?.Value);
-
-        //    a.FirstChild.Value = "asasasass";
-        //    xmlDocument.Save("C:\\app\\XmlFileReadWrite\\XmlFileModification\\XmlFileModificationTest\\XmlFile\\file.xml");
-
-
-        //    var aa = xmlDocument.GetElementsByTagName("Identifier").Item(0);
-
-        //    Console.WriteLine(aa.FirstChild.FirstChild.Value);
-        //}
-
         public void SignXmlFile(string FileName, string SignedFileName, RSA Key, string Certificate)
         {
             // Create a new XML document.
