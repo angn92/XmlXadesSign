@@ -1,11 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿//Read Xml file
 
-using System.Security.Cryptography.X509Certificates;
+using System.Xml;
 using XmlFileModificationTest;
 
-var replaceFieldXml = new ReplaceFieldsXml();
+//Variable
+var pathToFile = @"C:\app\XmlFileReadWrite\XmlFileModification\XmlFileModificationTest\XmlFile\file.xml";
 
-//Get test certificate
-var cert = new X509Certificate2("C:\\app\\cert\\domain.pfx", "123456789");
+// Load xml file
+var xmlDocument = new XmlDocument();
+xmlDocument.Load(pathToFile);
 
-replaceFieldXml.ModifyXmlFile("C:\\app\\XmlFileReadWrite\\XmlFileModification\\XmlFileModificationTest\\XmlFile\\test.xml", cert);
+ReplaceFieldsXml.ModifyXmlFile(xmlDocument, pathToFile);
